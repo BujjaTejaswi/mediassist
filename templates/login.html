@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login – MediAssist</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-box {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            width: 350px;
+            text-align: center;
+        }
+        .login-box img {
+            width: 48px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+        p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background: #0072a3;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <img src="https://img.icons8.com/fluency/48/medical-doctor.png" alt="Logo" />
+        <h2>Login to MediAssist</h2>
+        <p><em>AI-powered EMR Support Assistant</em></p>
+        <form method="POST">
+            <input type="text" name="username" placeholder="Enter your name" required>
+            <select name="role" required>
+                <option value="" disabled selected>Select your role</option>
+                <option value="doctor">Doctor</option>
+                <option value="admin">Admin</option>
+            </select>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

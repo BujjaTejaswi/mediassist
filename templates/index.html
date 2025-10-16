@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MediAssist – EMR Support Assistant</title>
+    <style>
+        /* [Your existing CSS — already perfect!] */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .chat-box {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            width: 450px;
+            text-align: center;
+        }
+        .chat-box img {
+            width: 48px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+        p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 80px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            resize: none;
+            font-size: 14px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background: #0072a3;
+        }
+        .response {
+            margin-top: 15px;
+            background: #f0f0f0;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #333;
+        }
+        .user-info {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+        .logout-link {
+            display: block;
+            margin-top: 10px;
+            font-size: 13px;
+            color: #008CBA;
+            text-decoration: none;
+        }
+        .logout-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-box">
+        <img src="https://img.icons8.com/fluency/48/medical-doctor.png" alt="Logo" />
+        <h2>MediAssist</h2>
+        <p><em>Your AI-powered EMR Support Assistant</em></p>
+
+        <div class="user-info">
+            <strong>Welcome, {{ username.title() }} 👋</strong><br>
+            <em>Role: {{ role.title() }}</em>
+        </div>
+
+        <form method="POST">
+            <textarea name="query" placeholder="Ask something..."></textarea>
+            <button type="submit">Ask</button>
+        </form>
+
+        {% if response %}
+        <div class="response">
+            <strong>Assistant:</strong> {{ response }}
+        </div>
+        {% endif %}
+
+        <a href="/logout" class="logout-link">Logout</a>
+    </div>
+</body>
+</html>
