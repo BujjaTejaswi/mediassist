@@ -5,7 +5,8 @@
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+            background: url("{{ url_for('static', filename='login.png') }}") no-repeat center center fixed;
+            background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -13,10 +14,11 @@
             margin: 0;
         }
         .login-box {
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(0, 0, 0, 0.4); /* Dark transparent background */
+            backdrop-filter: blur(10px);
             padding: 30px;
             border-radius: 16px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
             width: 350px;
             text-align: center;
         }
@@ -27,11 +29,11 @@
         h2 {
             margin: 0;
             font-size: 24px;
-            color: #333;
+            color: #ffffff; /* Bright white */
         }
         p {
             font-size: 14px;
-            color: #555;
+            color: #dddddd; /* Light gray */
             margin-bottom: 20px;
         }
         input, select {
@@ -41,11 +43,13 @@
             border-radius: 8px;
             border: 1px solid #ccc;
             font-size: 14px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #000000;
         }
         button {
             margin-top: 15px;
             padding: 10px 20px;
-            background: #008CBA;
+            background: #00aaff;
             color: white;
             border: none;
             border-radius: 6px;
@@ -53,7 +57,7 @@
             font-size: 14px;
         }
         button:hover {
-            background: #0072a3;
+            background: #0088cc;
         }
     </style>
 </head>
