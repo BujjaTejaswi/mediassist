@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, session
 import difflib
 import openai
+import os
 
 app = Flask(__name__)
 app.secret_key = 'bujja_secret_key'  # Required for session handling
@@ -14,8 +15,8 @@ patients = {
 }
 
 # 🔐 Optional: Enable OpenAI smart replies
-USE_OPENAI = True  # Set to False to disable AI replies
-openai.api_key = "your_openai_api_key_here"
+USE_OPENAI = True
+openai.api_key = os.getenv("OPENAI_API_KEY")  # Use Railway Variables
 
 # 🔍 Fuzzy name matching
 def find_patient_name(query):
@@ -112,5 +113,6 @@ def logout():
     session.clear()
     return redirect('/')
 
+# 🚀 Railway-compatible run command
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=8080)
